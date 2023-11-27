@@ -1,0 +1,62 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.variety {
+  @include flex(column, none, center);
+}
+.varietyTitle {
+  color: $first-color;
+  font-size: 0.75em;
+  margin-top: 1em;
+}
+.varietyGroup {
+  @include flex(column, center, center);
+  margin: 0.25em 0 0.75em 0;
+}
+.varietyInput {
+  box-sizing: border-box;
+  margin: 0.25em 0;
+  width: 100%;
+}
+.varietyInput, .removeVarietyButton {
+  padding: 0.5em;
+}
+.addVarietyButton, .removeVarietyButton {
+  border: none;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: $first-font;
+  margin: 0.25em 0;
+  text-align: center;
+  transition: 0.1s;
+  width: 100%;
+}
+.removeVarietyButton {
+  background: indianred;
+  color: $second-color;
+  padding: 0.5em;
+}
+.addVarietyButton {
+  background: transparent;
+  border: 1px solid $first-color;
+  color: $first-color;
+  margin-top: 1.5em;
+  padding: 1em;
+}
+.addVarietyButton:hover, .removeVarietyButton:hover {
+  opacity: 0.5;
+}
+
+@media(min-width: 768px) {
+  .varietyGroup {
+    @include flex(row, center, space-between);
+    margin: 0;
+  }
+  .varietyInput {
+    width: 25%;
+  }
+  .removeVarietyButton {
+    width: 20%;
+  }
+}

@@ -1,0 +1,62 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+@keyframes slidingAnimation {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  100% { 
+    opacity: 1;
+    transform: scaleX(1); 
+  }
+}
+
+.authentication {
+  @include container($second-color, 100vh, 100%);
+  @include flex(row, center, space-between);
+}
+.authenticationLeftCover, .authenticationRight {
+  @include flex(column, center, center);
+}
+.authenticationLeft {
+  @include container(none, 0, 0);
+  @include ellipsis;
+  animation: slidingAnimation 0.5s;
+  background: url('https://www.productplan.com/uploads/Stages-in-Product-Management-Process.png');
+  background-position: center;
+  background-size: cover;
+  border-radius: 0 1em 1em 0;
+  transform-origin: left;
+}
+.authenticationLeftCover {
+  @include container(rgba(0, 0, 0, 0.8), 100%, 100%);
+}
+.authenticationLeftCoverTitle {
+  color: $second-color;
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+.authenticationLeftCoverDescription {
+  color: $fourth-color;
+  font-family: $second-font;
+  font-size: 1.25vw;
+  font-style: italic;
+}
+.authenticationRight {
+  @include container(transparent, 100%, 100%);
+  @include ellipsis;
+  animation: slidingAnimation 0.5s;
+  padding: 0 3em;
+}
+
+@media(min-width: 768px) {
+  .authenticationLeft {
+    @include container(white, 100%, 60%);
+  }
+  .authenticationRight {
+    @include container(transparent, 100%, 40%);
+    padding: 0 5em;
+    transform-origin: right;
+  }
+}

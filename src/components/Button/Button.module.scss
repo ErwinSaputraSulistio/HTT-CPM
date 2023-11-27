@@ -1,0 +1,31 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.button {
+  border: none;
+  border-radius: 0.25em;
+  font-family: $first-font;
+  margin: 0.25em 0;
+  padding: 1em;
+  transition: 0.1s;
+  width: 100%;
+}
+.button:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.buttonDark {
+  background: $first-color;
+  color: $second-color;
+}
+.buttonLight {
+  background: transparent;
+  border: 1px solid $first-color;
+  color: $first-color;
+}
+
+@media(min-width: 768px) {
+  .button {
+    width: 10em;
+  }
+}

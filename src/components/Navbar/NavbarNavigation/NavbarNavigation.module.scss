@@ -1,0 +1,30 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.navbarNavigation {
+  @include flex(column, center, center);
+  width: 100%;
+}
+.navbarNavigationButton {
+  box-sizing: border-box;
+  padding: 1.5em;
+  transition: 0.25s ease-in-out;
+  width: 100%;
+}
+.navbarNavigationButton:hover {
+  background: $second-color;
+  cursor: pointer;
+}
+
+@media(min-width: 768px) {
+  .navbarNavigation {
+    @include flex(row, center, center);
+    width: 65%;
+  }
+  .navbarNavigationButton {
+    border-radius: 0.5em;
+    height: 100%;
+    text-align: center;
+    width: 20%;
+  }
+}

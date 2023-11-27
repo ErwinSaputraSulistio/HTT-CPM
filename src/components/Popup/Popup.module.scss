@@ -1,0 +1,87 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+// Animations
+@include popupContainerAnimation('popupContainerEaseIn', transparent, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+@include popupContainerAnimation('popupContainerEaseOut', rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), transparent);
+@include popupAnimation('popupEaseIn', scaleX(0) scaleY(0), scaleX(0.025) scaleY(1), scaleX(1) scaleY(1));
+@include popupAnimation('popupEaseOut', scaleX(1) scaleY(1), scaleX(0.025) scaleY(1), scaleX(0) scaleY(0));
+@include popupInsideAnimation('popupInsideEaseIn', 0, 0, 1);
+@include popupInsideAnimation('popupInsideEaseOut', 1, 0, 0);
+
+// Classes
+.popupContainer {
+  @include container(rgba(0, 0, 0, 0.5), 100vh, 100%);
+  @include flex(row, center, center);
+  animation: popupContainerEaseIn 0.25s;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.popup {
+  @include container($second-color, 60%, 80%);
+  @include ellipsis;
+  @include flex(column, center, none);
+  animation: popupEaseIn 0.5s;
+  border: 1px solid $first-color;
+  border-radius: 0.5em;
+  box-sizing: border-box;
+}
+.popupTop, .popupBottom {
+  animation: popupInsideEaseIn 0.5s;
+  box-sizing: border-box;
+  font-family: $second-font;
+  width: 100%;
+}
+.popupTop {
+  @include flex(row, center, space-between);
+  background-color: $first-color;
+  border-bottom: 1px solid $first-color;
+  color: $second-color;
+  font-size: 1.2em;
+  padding: 1em;
+}
+.popupCloseButton {
+  @include flex(column, center, center);
+  height: 1em;
+  transition: 0.25s;
+  width: 1em;
+}
+.popupCloseButton:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+.popupCloseButtonBarOne, .popupCloseButtonBarTwo {
+  background: $second-color;
+  height: 0.1em;
+  position: absolute;
+  width: 1em;
+}
+.popupCloseButtonBarOne {
+  transform: rotate(45deg);
+}
+.popupCloseButtonBarTwo {
+  transform: rotate(135deg);
+}
+.popupBottom {
+  color: $fourth-color;
+  font-size: 0.8em;
+  overflow-y: scroll;
+  padding: 1.5em;
+  position: relative;
+}
+.popupContainerClosing {
+  animation: popupContainerEaseOut 0.5s;
+}
+.popupClosing {
+  animation: popupEaseOut 0.5s;
+}
+.popupInsideClosing {
+  animation: popupInsideEaseOut 0.5s;
+}
+
+@media(min-width: 768px) {
+  .popup {
+    @include container($second-color, 75%, 60%);
+  }
+}

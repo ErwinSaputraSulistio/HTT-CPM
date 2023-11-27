@@ -1,0 +1,50 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.navbar {
+  @include container($third-color, 5em, 100%);
+  @include ellipsis;
+  @include flex(column, center, none);
+  border-radius: 0 0 1em 1em;
+  box-shadow: $base-shadow;
+  flex-grow: 1;
+  position: fixed;
+  transition: 0.25s;
+  z-index: 1;
+}
+.navbarMobileButtonClicked {
+  border-radius: 0;
+  height: 100%;
+}
+.navbarItems {
+  @include flex(column, center, center);
+  flex-grow: 1;
+  width: 100%;
+}
+.navbarCopyrights {
+  color: $fourth-color;
+  font-size: 0.75em;
+  margin-top: auto;
+  padding: 1.5em;
+  text-align: center;
+  width: 100%;
+}
+
+@media(min-width: 768px) {
+  .navbar {
+    @include flex(row, center, space-between);
+    background: $third-color;
+    box-shadow: $base-shadow;
+  }
+  .navbarMobileButtonClicked {
+    border-radius: 0 0 1em 1em;
+    height: 5em;
+  }
+  .navbarItems {
+    @include flex(row, center, space-between);
+    width: 85%;
+  }
+  .navbarCopyrights {
+    display: none;
+  }
+}

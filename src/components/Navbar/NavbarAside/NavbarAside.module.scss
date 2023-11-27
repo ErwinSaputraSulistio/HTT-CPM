@@ -1,0 +1,49 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.navbarAside {
+  @include flex(row, center, space-between);
+  box-sizing: border-box;
+  padding: 1.5em;
+  width: 100%;
+}
+.navbarLogoArea {
+  @include flex(row, center, center);
+}
+.navbarLogoTitle {
+  font-family: $second-font;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: 0 0.5em;
+}
+.navbarHamburger {
+  @include flex(column, center, center);
+}
+.navbarHamburgerBar {
+  background: $first-color;
+  border-radius: 0.5em;
+  height: 0.2em;
+  margin: 0.1em;
+  width: 1.5em;
+}
+.navbarHamburgerActive .navbarHamburgerBar:nth-child(2) {
+  opacity: 0;
+}
+.navbarHamburgerActive .navbarHamburgerBar:nth-child(1) {
+  transform: translateY(0.4em) rotate(45deg);
+}
+.navbarHamburgerActive .navbarHamburgerBar:nth-child(3) {
+  transform: translateY(-0.4em) rotate(-45deg);
+}
+.navbarHamburgerBar {
+  transition: 0.25s ease-in-out;
+}
+
+@media(min-width: 768px) {
+  .navbarAside {
+    width: 15%;
+  }
+  .navbarHamburger {
+    display: none;
+  }
+}

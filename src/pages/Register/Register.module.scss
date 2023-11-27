@@ -1,0 +1,27 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.register, .registerInputs {
+  @include container(none, auto, 100%);
+}
+.register {
+  @include flex(column, center, center);
+}
+.registerInputs {
+  @include flex(column, none, none);
+  margin-top: 2em;
+}
+.loginNavigation {
+  font-size: 0.75em;
+  margin-top: 1em;
+}
+.loginButton {
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 0.25em;
+  transition-duration: 0.25s;
+}
+.loginButton:hover {
+  opacity: 0.5;
+  text-decoration: underline;
+}

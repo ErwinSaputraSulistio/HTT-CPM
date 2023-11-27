@@ -1,0 +1,49 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.dropdownTitle {
+  color: $first-color;
+  font-size: 0.75em;
+  margin-bottom: 0.5em;
+}
+.dropdown {
+  background: $third-color;
+  border: 1px solid $fourth-color;
+  border-radius: 0.25em;
+  margin-bottom: 1em;
+}
+.dropdownSelected, .dropdownButton {
+  @include flex(row, center, space-between);
+  box-sizing: border-box;
+  color: $first-color;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  transition: 0.25s;
+}
+.dropdownSelected:hover, .dropdownButton:hover {
+  background: $second-color;
+}
+.dropdownArrow {
+  border: solid $first-color;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.dropdownArrowRotate {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+.dropdownOption {
+  @include flex(column, none, center);
+  height: 0;
+  transform: scaleY(0);
+}
+.dropdownOptionShow {
+  height: auto;
+  transform: scaleY(1);
+}
+.dropdownButton {
+  border-top: 1px solid $fourth-color;
+}

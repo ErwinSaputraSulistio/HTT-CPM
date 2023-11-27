@@ -1,0 +1,7 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.notFound {
+  @include container(transparent, 100vh, 100%);
+  @include flex(column, center, center);
+}

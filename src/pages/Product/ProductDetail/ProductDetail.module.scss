@@ -1,0 +1,60 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.productDetailContainer {
+  @include flex(column, center, center);
+}
+.productDetail {
+  @include container(transparent, auto, 100%);
+  @include flex(column, none, none);
+}
+.productDetailImage {
+  width: 100%;
+}
+.productDetailData {
+  @include flex(column, none, none);
+  width: 100%;
+}
+.productDetailLabel, .productDetailDescription {
+  @include ellipsis;
+  width: 100%;
+}
+.productDetailLabel {
+  font-size: 0.8em;
+}
+.productDetailDescription {
+  color: $first-color;
+  font-family: $second-font;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.productVarietyTable {
+  margin: 0.5em 0 1.25em 0;
+}
+th, td {
+  @include ellipsis;
+}
+.productVarietyData {
+  color: $first-color;
+}
+
+@media(min-width: 768px) {
+  .productDetailContainer {
+    @include flex(row, center, space-around);
+  }
+  .productDetail {
+    width: 50%;
+  }
+  .productDetailImage {
+    width: 40%;
+  }
+  .productDetailLabel {
+    font-size: 1em;
+    width: 25%;
+  }
+  .productDetailDescription {
+    font-size: 1.5em;
+    width: 75%;
+  }
+}

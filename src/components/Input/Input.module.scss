@@ -1,0 +1,19 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.input, .label {
+  font-family: $second-font;
+}
+.input {
+  border: 1px solid $fourth-color;
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  font-size: 0.9em;
+  margin: 0.25em 0 1em 0;
+  padding: 0.75em 1em;
+  width: 100%;
+}
+.label {
+  color: $first-color;
+  font-size: 0.7em;
+}
